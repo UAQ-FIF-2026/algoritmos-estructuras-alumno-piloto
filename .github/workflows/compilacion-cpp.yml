@@ -1,0 +1,23 @@
+name: Compilacion C++
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  compilar-y-probar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+      - name: Configurar
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Compilar
+        run: cmake --build build --config Release
+      - name: Ejecutar pruebas
+        run: ctest --test-dir build --output-on-failure
