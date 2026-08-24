@@ -1,0 +1,7 @@
+# El profesor revisa todos los cambios.
+* @witchet43
+
+# La automatizacion y las pruebas requieren revision expresa.
+/.github/ @witchet43
+/tests/ @witchet43
+/CMakeLists.txt @witchet43
